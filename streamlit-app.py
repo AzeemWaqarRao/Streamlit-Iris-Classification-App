@@ -25,17 +25,20 @@ def main():
     prediction = model.predict_proba(inp)
 
     # Main page
-    st.write(''' 
-    # Iris Flower Classification
-    
-    This app correctly classifies iris flower among 3 possible species
-    ''')
+    st.title("Iris Flower Classification")
+    st.write("This app correctly classifies iris flower among 3 possible species")
+
+    ## Show Results when prediction is done
     if prediction.any():
-        st.write("## Results")
+        st.write('''
+        ## Results
+        Following is the probability of each class
+        ''')
+        
         df = pd.DataFrame(prediction, index = ['result'], columns=species)
         st.dataframe(df)
         result = species[np.argmax(prediction)]
-        st.write("This flower belongs to " + result + " class")
+        st.write("**This flower belongs to " + result + " class**")
         st.image(image[np.argmax(prediction)])
 
     
