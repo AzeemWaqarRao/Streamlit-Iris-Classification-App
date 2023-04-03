@@ -46,7 +46,7 @@ Pympler==1.0.1
 pyrsistent==0.19.3
 python-dateutil==2.8.2
 pytz==2023.3
-pytz-deprecation-shim==0.1.0.post0
+pytz-deprecation-shim
 pywin32
 pyzmq==25.0.2
 requests==2.28.2
